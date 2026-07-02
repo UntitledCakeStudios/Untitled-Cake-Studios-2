@@ -144,6 +144,50 @@
       evt.currentTarget.classList.add('active');
     }
   </script>
+<script>
+(() => {
+    // Fix white flash while scrolling
+    document.documentElement.style.backgroundColor = "#d8b06a";
+    document.body.style.backgroundColor = "#d8b06a";
+
+    // Disable fixed background on browsers where it causes flickering
+    const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        document.body.style.backgroundAttachment = "scroll";
+    }
+
+    // Dark mode persistence
+    const checkbox = document.querySelector('#settings input[type="checkbox"]');
+
+    if (checkbox) {
+        const saved = localStorage.getItem("darkMode");
+
+        if (saved === "true") {
+            document.body.classList.add("dark-mode");
+            checkbox.checked = true;
+            document.documentElement.style.backgroundColor = "#181410";
+            document.body.style.backgroundColor = "#181410";
+        }
+
+        checkbox.addEventListener("change", function () {
+            localStorage.setItem("darkMode", this.checked);
+
+            if (this.checked) {
+                document.documentElement.style.backgroundColor = "#181410";
+                document.body.style.backgroundColor = "#181410";
+            } else {
+                document.documentElement.style.backgroundColor = "#d8b06a";
+                document.body.style.backgroundColor = "#d8b06a";
+            }
+        });
+    }
+
+    // Prevent horizontal scrolling
+    document.documentElement.style.overflowX = "hidden";
+    document.body.style.overflowX = "hidden";
+})();
+</script>
 </body>
   </html>
-  
+      
