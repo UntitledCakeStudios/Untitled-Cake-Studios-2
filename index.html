@@ -15,7 +15,7 @@
     }
     
     body { 
-      background-image: url('https://static.vecteezy.com/system/resources/thumbnails/000/263/176/small/cartoon-desert-banner.jpg');
+      background-image: url('https://i.postimg.cc/zfH5wy4C/360-F-176015185-m-PGNca-L7Wyg-UCaa-NWR5nhi-C08H4tbo-BE-(1).jpg');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -28,7 +28,7 @@
     }
     
     body.dark-mode { 
-      background-image: url('https://media.istockphoto.com/id/1351985254/vector/full-moon-landscape.jpg?s=612x612&w=0&k=20&c=v8RrJ81Wqj3FEMEIm0oQF5HERauDWB73n2EDy01ukOs='); 
+      background-image: url('https://i.postimg.cc/5tVpgGRD/360-F-515248017-Oym-O6Gwhm-D6Joyw-Rfe-Gfr-Z99i8Cx9dt1.jpg?s=612x612&w=0&k=20&c=v8RrJ81Wqj3FEMEIm0oQF5HERauDWB73n2EDy01ukOs='); 
     }
     
     body.dark-mode .main-window { background-color: var(--dm-window); color: var(--dm-text); border-color: #5A3825; }
@@ -144,50 +144,6 @@
       evt.currentTarget.classList.add('active');
     }
   </script>
-<script>
-(() => {
-    // Fix white flash while scrolling
-    document.documentElement.style.backgroundColor = "#d8b06a";
-    document.body.style.backgroundColor = "#d8b06a";
-
-    // Disable fixed background on browsers where it causes flickering
-    const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
-
-    if (isMobile) {
-        document.body.style.backgroundAttachment = "scroll";
-    }
-
-    // Dark mode persistence
-    const checkbox = document.querySelector('#settings input[type="checkbox"]');
-
-    if (checkbox) {
-        const saved = localStorage.getItem("darkMode");
-
-        if (saved === "true") {
-            document.body.classList.add("dark-mode");
-            checkbox.checked = true;
-            document.documentElement.style.backgroundColor = "#181410";
-            document.body.style.backgroundColor = "#181410";
-        }
-
-        checkbox.addEventListener("change", function () {
-            localStorage.setItem("darkMode", this.checked);
-
-            if (this.checked) {
-                document.documentElement.style.backgroundColor = "#181410";
-                document.body.style.backgroundColor = "#181410";
-            } else {
-                document.documentElement.style.backgroundColor = "#d8b06a";
-                document.body.style.backgroundColor = "#d8b06a";
-            }
-        });
-    }
-
-    // Prevent horizontal scrolling
-    document.documentElement.style.overflowX = "hidden";
-    document.body.style.overflowX = "hidden";
-})();
-</script>
 </body>
-  </html>
-      
+          </html>
+          
